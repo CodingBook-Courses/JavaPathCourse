@@ -26,7 +26,8 @@ public class MainException {
             System.out.println("Need to enter integers only.");
         }
 
-//        int value = getInt();
+        int value = getInt();
+        System.out.println(value);
     }
 
     private static int getInt() {
@@ -40,12 +41,10 @@ public class MainException {
         System.out.println("Enter an integer: ");
         while(true) {
             try {
-                System.out.println("Hi!");
                 return scanner.nextInt();
             } catch (InputMismatchException exception) {
-                System.out.println("Characters entered. Enter integer.");
-            } catch (Exception exception) {
-                System.out.println(exception.toString());
+                scanner.nextLine();
+                System.out.println("Only integer values allowed. Please try again: ");
             }
         }
     }
